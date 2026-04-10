@@ -17,7 +17,7 @@ func main()  {
 	if err != nil {
 		fmt.Println("Error: failed to read file")
 	}
-	fmt.Println(data)
+	fmt.Println(string(data))
 
 	text := string(data)
 
@@ -25,6 +25,8 @@ func main()  {
 	text = Lower(text)
 	text = HexToDecimal(text)
 	text = BinToDecimal(text)
+	text = Lastwords(text)
+	text  = Vowels(text)
 
 	erro := os.WriteFile(file2, []byte(text), 0644); if err == nil {
 		fmt.Println("error: file not found")

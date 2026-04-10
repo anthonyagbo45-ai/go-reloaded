@@ -27,4 +27,26 @@ func Lower(word string) string {
 	}
 	return strings.Join(words, " ")
 }
+
+func Lastwords(word string) string {
+	words := strings.Fields(word)
+
+	for i := 0; i < len(words); i++ {
+		if words[i] == "(cap, 2)" && i >= 2 {
+			words[i-1] = strings.ToUpper(words[i-1])
+			words[i-2] = strings.ToUpper(words[i-2]) 
+			words[i] = ""
+		}
+	}
+	return strings.Join(words, " ")
+}
+
+func Vowels(word string) string {
+	vowels := "aeiouhAEIOUH"
+
+	if strings.ContainsAny(word, vowels) {
+		return "There it was. An amazing rock!"
+	}
+	return "There it was. A amazing rock!"
+}
  
